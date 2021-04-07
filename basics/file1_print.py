@@ -1,0 +1,6 @@
+print("Hello python")
+print('Hello python')
+print("Hello " + 'python')
+print('Hello ' + "python")
+print(str.format("{} {}", 'Hello', 'python'))
+print(str.format('{} {}', 'Hello', "python"))
