@@ -3,7 +3,7 @@
 # 1_var="Test"
 
 def log_variable(var_name, var_value):
-    print(str.format("{}: {}", var_name, var_value))
+    print(str.format("{} ->{}<-", var_name, var_value))
 
 
 # strings - immutable
@@ -167,7 +167,10 @@ log_variable("string_numbers[1:7:2]", string_numbers[1:7:2])  # print odd number
 log_variable("string_numbers[1:string_numbers.index(\"7\"):2]",
              string_numbers[1:string_numbers.index("7"):2])  # print odd numbers less than 7
 
-# String notebooks from course
+print(
+    """
+    String notebooks from course
+    """)
 # Defining a string on multiple lines, using triple quotes and the line continuation character ( \ )
 my_string = '''this\
 is\
@@ -177,88 +180,106 @@ string'''
 
 # Strings - indexing
 a = "Cisco Switch"
-
 a.index("i")
+log_variable("a.index(\"i\")", a.index("i"))
 
 # Strings - character count
 a = "Cisco Switch"
-
 a.count("i")
+log_variable("a.count(\"i\")", a.count("i"))
 
 # Strings - finding a character
 a = "Cisco Switch"
-
 a.find("sco")
+log_variable("a.find(\"sco\")", a.find("sco"))
 
 # Strings - converting the case
 a = "Cisco Switch"
-
 a.lower()  # lowercase
+log_variable("a.lower()", a.lower())
 
 a.upper()  # uppercase
+log_variable("a.upper()", a.upper())
 
 # Strings - checking whether the string starts with a character
 a = "Cisco Switch"
-
 a.startswith("C")
+log_variable("a.startswith(\"C\")", a.startswith("C"))
 
 # Strings - checking whether the string ends with a character
 a = "Cisco Switch"
-
 a.endswith("h")
+log_variable("a.endswith(\"h\")", a.endswith("h"))
 
 # Strings - removing a character from the beginning and the end of a string
 a = "   Cisco Switch   "
-
 a.strip()  # remove whitespaces
+log_variable("a.strip()", a.strip())
 
 b = "$$$Cisco Switch$$$"
-
 b.strip("$")  # remove a certain character
+log_variable("b.strip(\"$\")", b.strip("$"))
 
 # Strings - removing all occurences of a character from a string
 a = "   Cisco Switch   "
-
 a.replace(" ", "")  # replace each space character with the absence of any character
+log_variable("a.replace(\" \", \"\")", a.replace(" ", ""))
 
 # Strings - splitting a string by specifying a delimiter; the result is a list
 a = "Cisco,Juniper,HP,Avaya,Nortel"  # the delimiter is a comma
-
 a.split(",")
+log_variable("a.split(\",\")", a.split(","))
 
 # Strings - inserting a character in between every two characters of the string / joining the characters by using a delimiter
 a = "Cisco Switch"
-
 "_".join(a)
+log_variable("\"_\".join(a)", "_".join(a))
 
 # Additional methods (source: https://www.tutorialspoint.com/python3/python_strings.htm)
 
-my_string.capitalize()
 # Capitalizes first letter of string.
+a = "cisco switch"
+a.capitalize()
+log_variable("a.capitalize()", a.capitalize())
 
-my_string.lstrip()
 # Removes all leading whitespace in string.
+a = "     cisco switch      "
+log_variable("a.lstrip()", a.lstrip())
 
-my_string.rstrip()
 # Removes all trailing whitespace of string.
+a = "     cisco switch      "
+log_variable("a.rstrip()", a.rstrip())
 
-my_string.swapcase()
 # Inverts case for all letters in string.
+a = "cisco Switch"
+my_string.swapcase()
+log_variable("a.swapcase()", a.swapcase())
 
-my_string.title()
 # Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.
+a = "cisco Switch"
+log_variable("a.title()", a.title())
 
-my_string.isalnum()
 # Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.
+log_variable("\"1234\".isalnum()", "1234".isalnum())
+log_variable("\"#$%\".isalnum()", "#$%".isalnum())
+log_variable("\"#$%a\".isalnum()", "#$%a".isalnum())
+log_variable("\"+\".isalnum()", "+".isalnum())
 
-my_string.isalpha()
 # Returns true if string has at least 1 character and all characters are alphabetic and false otherwise.
+my_string.isalpha()
+log_variable("\"1\".isalpha()", "1".isalpha())
+log_variable("\"abcdefghijklmnopqrst\".isalpha()", "abcdefghijklmnopqrst".isalpha())
+log_variable("\"12345abcdefghijklmnopqrst\".isalpha()", "12345abcdefghijklmnopqrst".isalpha())
 
 my_string.isdigit()
 # Returns true if string contains only digits and false otherwise.
+log_variable("\"1000.00\".isdigit()", "1000.00".isdigit())
+log_variable("\"1200\".isdigit()", "1200".isdigit())
 
 my_string.islower()
 # Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.
+log_variable("\"howe town\".islower()", "howe town".islower())
+log_variable("\"Home town\".islower()", "Home town".islower())
 
 my_string.isnumeric()
 # Returns true if a unicode string contains only numeric characters and false otherwise.
@@ -321,7 +342,6 @@ string1[-5:]  # returns the last 5 characters in the string
 string1[:-5]  # returns the string minus its last 5 characters
 string1[::2]  # adds a third element called step; skips every second character of the string
 string1[::-1]  # returns string1's elements in reverse order
-
 
 # numbers - immutable
 # booleans
