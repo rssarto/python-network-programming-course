@@ -343,9 +343,6 @@ string1[:-5]  # returns the string minus its last 5 characters
 string1[::2]  # adds a third element called step; skips every second character of the string
 string1[::-1]  # returns string1's elements in reverse order
 
-# numbers - immutable
-# booleans
-# lists - mutable
 # sets - mutable
 # frozensets - immutable
 # tuples - immutable
