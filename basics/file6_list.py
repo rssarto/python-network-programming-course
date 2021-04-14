@@ -88,3 +88,19 @@ sorted(numbers_list)
 log_variable("sorted(numbers_list)", numbers_list)
 sorted(numbers_list, reverse=True)
 log_variable("sorted(numbers_list, reverse=True)", numbers_list)
+
+# slicing
+log_variable(" [1, 2, 3, \"a\", \"b\", \"c\"][0: 4]", [1, 2, 3, "a", "b", "c"][0: 3])
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][: 3]", [1, 2, 3, "a", "b", "c"][: 3])
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][2: 5]", [1, 2, 3, "a", "b", "c"][2: 5])
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][2:]", [1, 2, 3, "a", "b", "c"][2:])
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][-1]", [1, 2, 3, "a", "b", "c"][-1])
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][-2]", [1, 2, 3, "a", "b", "c"][-2])
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][-4:-1]", [1, 2, 3, "a", "b", "c"][-4:-1])
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][-3:]", [1, 2, 3, "a", "b", "c"][-3:])
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][:-3]", [1, 2, 3, "a", "b", "c"][:-3])
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][::2]", [1, 2, 3, "a", "b", "c"][::2])  # Read list with step 2
+log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][::-1]", [1, 2, 3, "a", "b", "c"][::-1])  # List in reverse order
+
+
+
