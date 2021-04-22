@@ -1,0 +1,8 @@
+# virtual environments in python
+https://linuxize.com/post/how-to-create-python-virtual-environments-on-ubuntu-18-04/
+
+# In target directory execute the command below to create a virtual environment
+python3 -m venv python-course-env
+
+# Activating the virtual environment
+source <virtual_env_folder>/bin/activate
