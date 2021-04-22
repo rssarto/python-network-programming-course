@@ -349,3 +349,7 @@ string1[::-1]  # returns string1's elements in reverse order
 # ranges
 # dictionaries - mutables
 # None
+
+# Raw literals - a way to tell python's interpreter to read all characters as literals and not as special codes
+var_raw_string = r"\ntest\tblabla"
+log_variable("var_raw_string", var_raw_string)
