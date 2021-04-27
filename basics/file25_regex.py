@@ -146,3 +146,74 @@ log_variable("set_specific_set_result", set_specific_set_result)
 # matching specific digits 1, 3 or 5 in the string
 specific_digits_result = re.findall("r[135]", new_string_1)
 log_variable("specific_digits_result", specific_digits_result)
+
+# matching all characters in the string that are not seven
+char_except_seven_result = re.findall(r"[^3]", "I enjoy learning programming languages such as Python 3 or java")
+log_variable("char_except_seven_result", char_except_seven_result)
+
+"""
+OR operator in regular expressions
+A|B - Matches A or B, when the left part of the or is matched then the right part is not evaluated 
+"""
+"""
+Match the word with exact two letters or the word that has 5 characters length followed with a space and digit
+    \W(\w{2})\W - two word characters between no word characters (spaces)
+    ([A-Z]\w{5})\s\d - Group that starts with a uppercase character followed by five word characters, a space and a digit.
+"""
+or_search_result = re.search(r"\W(\w{2})\W|([A-Z]\w{5})\s\d", new_string_1)
+log_variable("or_search_result.group(1)", or_search_result.group(1))
+log_variable("or_search_result.group(2)", or_search_result.group(2))
+
+"""
+Split
+subn - replaces the character in the string and returns the number of replacements along with the modified string in a form of tuple
+"""
+log_variable("re.split(" ", new_string_1)", re.split(" ", new_string_1))
+log_variable("re.split(r\"\\s\", new_string_1)", re.split(r"\s", new_string_1))
+# splits the string with a two word character
+log_variable("re.split(r\"\\W\\w{2}\\W\", new_string_1)", re.split(r"\W\w{2}\W", new_string_1))
+
+# replace all the space in the string underscore
+log_variable("re.subn(r\"\\s\", \"_\", new_string_1)", re.subn(r"\s", "_", new_string_1))
+
+"""
+Additional regex syntax elements
+^ -> Not logical operator in between square brackets
+     Match characters in the beginning of the string
+$ -> Match characters in the end of the string
+"""
+# Matching characters in the beginning of the string
+search_beginning_result = re.search(r"^[A-Z]\W\w{5}", new_string_1)
+log_variable("search_beginning_result", search_beginning_result)
+log_variable("search_beginning_result.pos", search_beginning_result.pos)
+log_variable("search_beginning_result.string", search_beginning_result.string)
+
+# Matching characters in the of the string
+search_end_result = re.search(r"[A-Z]\w{5}\s\d$", new_string_1)
+log_variable("search_end_result", search_end_result)
+
+# Repetitions inside regular expressions patterns
+repetition_string = "He is .. zzzzzzzzzz ... sleeeeeping"
+# Matching the exact number of characters in the string
+search_exact_number_chars_result = re.search(r"z{10}", repetition_string)
+log_variable("search_exact_number_chars_result", search_exact_number_chars_result)
+
+# Matching one or more repetitions in the string
+search_one_or_more_chars_result = re.search(r"z{1,}", repetition_string)
+log_variable("search_one_or_more_chars_result", search_one_or_more_chars_result)
+
+# Matching at least 1 or 10 maximum times - greedy mode
+search_at_least_and_max_result = re.search(r"z{1,10}", repetition_string)
+log_variable("search_at_least_and_max_result", search_at_least_and_max_result)
+
+# Matching at least 1 or 10 maximum time - limit greedy behaviour, match feel repetitions as possible
+search_minimum_as_possible_result = re.search(r"z{1,10}?", repetition_string)
+log_variable("search_minimum_as_possible_result", search_minimum_as_possible_result)
+
+at_least_three_search_minimum_as_possible_result = re.search(r"z{3,10}?", repetition_string)
+log_variable("at_least_three_search_minimum_as_possible_result", at_least_three_search_minimum_as_possible_result)
+
+"""
+NoneType - object has no attribute group
+Means you wrote the wrong regex pattern
+"""
