@@ -68,7 +68,6 @@ list1.extend([9, 99, 999])
 log_variable("list1.extend([9, 99, 999])", list1)
 log_variable("list1 + [5, 5, 555]", list1 + [5, 5, 555])
 
-
 # fetching the element's index from the list
 log_variable("list1.index(-11)", list1.index(-11))
 
@@ -102,5 +101,19 @@ log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][:-3]", [1, 2, 3, "a", "b", "c"][:-3
 log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][::2]", [1, 2, 3, "a", "b", "c"][::2])  # Read list with step 2
 log_variable("[1, 2, 3, \"a\", \"b\", \"c\"][::-1]", [1, 2, 3, "a", "b", "c"][::-1])  # List in reverse order
 
+"""
+Advanced concepts
+"""
+# iterating a list a do some sort of action on each item using list comprehension
 
+# -> common way
+adv_list_1 = []
+for number in range(10):
+    number_ = number ** 2
+    adv_list_1.append(number)
 
+# -> using list comprehension
+adv_list_2 = [x ** 2 for x in range(10)]
+
+# -> using list comprehension and a condition
+adv_list_3 = [x ** 2 for x in range(10) if x > 5]

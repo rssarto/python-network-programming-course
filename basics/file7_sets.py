@@ -60,3 +60,9 @@ log_variable("frozen_set2.intersection(frozen_set1)", frozen_set2.intersection(f
 log_variable("frozen_set1.difference(frozen_set2)", frozen_set1.difference(frozen_set2))
 log_variable("frozen_set2.difference(frozen_set1)", frozen_set2.difference(frozen_set1))
 log_variable("frozen_set1.union(frozen_set2)", frozen_set1.union(frozen_set2))
+
+"""
+Advanced concepts
+"""
+# -> using set comprehension
+adv_set_1 = {x ** 2 for x in range(10)}
