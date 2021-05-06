@@ -1,4 +1,23 @@
 #!/bin/bash
+
+#===============================================================================
+#
+#          FILE:  create_virtual_env.sh
+#
+#         USAGE:  ./create_virtual_env.sh [OPTIONAL:VIRTUAL_ENVIRONMENT_NAME]
+#
+#   DESCRIPTION: As a helper this script creates the virtual environment for your project
+#
+#       OPTIONS:  ---
+#  REQUIREMENTS:  ---
+#          BUGS:  ---
+#         NOTES:  ---
+#        AUTHOR:  Ricardo Sarto, ricardo.soares.sarto@gmail.com
+#       VERSION:  1.0
+#       CREATED:  05/06/2021 18:51 PM GMT-3
+#      REVISION:  ---
+#===============================================================================
+
 VIRTUAL_ENVIRONMENT_NAME=$1
 echo "virtual environment name: $VIRTUAL_ENVIRONMENT_NAME"
 if [ -z "${VIRTUAL_ENVIRONMENT_NAME}" ]; then
