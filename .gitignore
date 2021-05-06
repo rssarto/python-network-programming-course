@@ -3,3 +3,5 @@
 python-course-env
 basics/resources/temp
 resources
+**-env
+venv**
