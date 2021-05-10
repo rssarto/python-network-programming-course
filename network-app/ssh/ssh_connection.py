@@ -96,7 +96,8 @@ def ssh_connection(ip):
             print("\nDONE for device {} :)".format(ip))
 
         # Test for reading command output
-        print(str(router_output) + "\n")
+        # print(re.findall(r"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}", str(router_output))[1])
+        # print(str(router_output) + "\n")
 
         # Closing the connection
         session.close()
@@ -104,7 +105,3 @@ def ssh_connection(ip):
         print(
             "* Invalid username or password :( \n* Please check the username/password file or the device configuration.")
         print("* Closing program... Bye!")
-
-
-if __name__ == "__main__":  # execute only when executing this code as a standalone application
-    ssh_connection('10.10.10.2')
