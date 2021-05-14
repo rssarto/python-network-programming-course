@@ -1,0 +1,10 @@
+lsc() - list scapy available commands
+LS(<COMMAND>) - display details about a specific command
+print(sniff.__doc__) - show all the parameters accepted by the sniff() function
+pkt = sniff(iface="vboxnet0", count=5) - listen at maximum 5 packets on vboxnet0
+pkt[<packet_ID>].show() - retrieve details of the packet
+pkt[2][2] - retrieve details from packet with id 2 and layer 2 - third layer in the packet
+pkt[2][ICMP] - retrieve details from packet with id 2 and the name of the layer
+pkt[2][ICMP].show() - pretty information
+pkt[2][ICMP].summary() - summary information about the ICMP layer
+pkt[2][1].src - retrieving the src property value from packet 2 and layer 1 - the second layer in the packet
