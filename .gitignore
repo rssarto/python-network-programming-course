@@ -4,3 +4,4 @@ python-course-env
 basics/resources/temp
 **-env
 venv**
+**log*.txt
