@@ -5,3 +5,4 @@ basics/resources/temp
 **-env
 venv**
 **log*.txt
+cfgfiles
